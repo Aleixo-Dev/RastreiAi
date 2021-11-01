@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RastreiAi</string>
     <string name="rastreia">RastreiAí</string>
+    <string name="fab">fab</string>
 </resources>
