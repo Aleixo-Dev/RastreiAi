@@ -5,15 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.nicolas.rastreiai.R
+import com.nicolas.rastreiai.common.OrderAdapter
 import com.nicolas.rastreiai.databinding.HomeFragmentBinding
+import com.nicolas.rastreiai.domain.model.OrderEntity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    private val viewModel: HomeViewModel by viewModels()
 
     private var _binding: HomeFragmentBinding? = null
     private val binding get() = _binding!!
@@ -28,10 +31,33 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            fab.setOnClickListener {
-                Toast.makeText(requireContext(), "Ok", Toast.LENGTH_SHORT).show()
-            }
+        getOrdersList()
+        setupListeners()
+
+    }
+
+    private fun getOrdersList(){
+        viewModel.orders.observe(viewLifecycleOwner) { orderList ->
+            setupRecyclerView(orderList)
+        }
+    }
+
+    private fun setupListeners() = binding.apply {
+        fab.setOnClickListener {
+            navigateTo(R.id.action_homeFragment_to_customDialogFragment)
+        }
+    }
+
+    private fun setupRecyclerView(orderList: List<OrderEntity>) = binding.apply {
+        with(recyclerProducts) {
+            adapter = OrderAdapter(orderList)
+            setHasFixedSize(true)
+        }
+    }
+
+    private fun navigateTo(directions : Int){
+        findNavController().run {
+            navigate(directions)
         }
     }
 
