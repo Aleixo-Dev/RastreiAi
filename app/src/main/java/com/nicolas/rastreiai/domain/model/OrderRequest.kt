@@ -1,6 +1,6 @@
 package com.nicolas.rastreiai.domain.model
 
 data class OrderRequest(
-    val orderCode : String,
+    val code : String,
     val type : String = "LS",
 )

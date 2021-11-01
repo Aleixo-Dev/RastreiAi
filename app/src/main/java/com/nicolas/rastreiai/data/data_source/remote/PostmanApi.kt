@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface PostmanApi {
 
-    @POST("api/rastreio")
+    @POST("/api/rastreio")
     suspend fun getOrderState(@Body orderRequest: OrderRequest) : PostmanResponse
 
 }
