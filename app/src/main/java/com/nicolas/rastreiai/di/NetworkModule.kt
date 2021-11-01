@@ -2,6 +2,8 @@ package com.nicolas.rastreiai.di
 
 import com.nicolas.rastreiai.common.Constants
 import com.nicolas.rastreiai.data.data_source.remote.PostmanApi
+import com.nicolas.rastreiai.data.data_source.remote.PostmanRemoteDataSource
+import com.nicolas.rastreiai.data.data_source.remote.PostmanRemoteDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,5 +39,11 @@ object NetworkModule {
             .connectTimeout(15, TimeUnit.SECONDS)
             .retryOnConnectionFailure(true)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRemoteRepository(api : PostmanApi) : PostmanRemoteDataSource{
+        return PostmanRemoteDataSourceImpl(api)
     }
 }
