@@ -9,5 +9,13 @@
         android:id="@+id/homeFragment"
         android:name="com.nicolas.rastreiai.presentation.home.HomeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_customDialogFragment"
+            app:destination="@id/customDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/customDialogFragment"
+        android:name="com.nicolas.rastreiai.presentation.add_order.AddOrderFragment"
+        android:label="CustomDialogFragment" />
 </navigation>
