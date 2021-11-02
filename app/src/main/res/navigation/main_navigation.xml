@@ -13,9 +13,21 @@
         <action
             android:id="@+id/action_homeFragment_to_customDialogFragment"
             app:destination="@id/customDialogFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
     <dialog
         android:id="@+id/customDialogFragment"
         android:name="com.nicolas.rastreiai.presentation.add_order.AddOrderFragment"
         android:label="CustomDialogFragment" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.nicolas.rastreiai.presentation.details.DetailsFragment"
+        android:label="details_fragment"
+        tools:layout="@layout/details_fragment" >
+        <argument
+            android:name="OrderEntity"
+            app:argType="com.nicolas.rastreiai.domain.model.OrderEntity" />
+    </fragment>
 </navigation>

@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/drawable/background_details.xml" value="0.2203125" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/drawable/background_dialog.xml" value="0.2203125" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/drawable/ic_baseline_airport_shuttle_24.xml" value="0.2203125" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/background_image_details.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/custom_dialog.xml" value="0.22" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/details_fragment.xml" value="0.25" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/home_fragment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/items_details.xml" value="0.25" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/items_product.xml" value="0.25" />
         <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/layout/new_custom_dialog.xml" value="0.2" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
+        <entry key="..\:/Users/nicol/AndroidStudioProjects/RastreiAi/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2203125" />
       </map>
     </option>
   </component>
