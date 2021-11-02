@@ -7,7 +7,7 @@ data class Objeto(
     @SerializedName("categoria")
     val categoria: String,
     @SerializedName("evento")
-    val evento: List<Evento>? = emptyList(),
+    val evento: List<Evento>,
     @SerializedName("nome")
     val nome: String,
     @SerializedName("numero")

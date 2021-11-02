@@ -7,7 +7,8 @@ import com.nicolas.rastreiai.databinding.ItemsProductBinding
 import com.nicolas.rastreiai.domain.model.OrderEntity
 
 class OrderAdapter(
-    private val orderStateUiList: List<OrderEntity>
+    private val orderStateUiList: List<OrderEntity>,
+    private val clickCode: ((order: OrderEntity) -> Unit)
 ) : RecyclerView.Adapter<OrderAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -17,7 +18,7 @@ class OrderAdapter(
                 parent,
                 false
             )
-        return ViewHolder(view)
+        return ViewHolder(view, clickCode)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -26,13 +27,16 @@ class OrderAdapter(
 
     override fun getItemCount() = orderStateUiList.size
 
-    inner class ViewHolder(binding: ItemsProductBinding) :
+    inner class ViewHolder(binding: ItemsProductBinding, clickCode: ((order: OrderEntity) -> Unit)) :
         RecyclerView.ViewHolder(binding.root) {
 
         private val titleOrder = binding.tvProductTitle
 
         fun bind(orderEntity: OrderEntity) {
             titleOrder.text = orderEntity.title
+            itemView.setOnClickListener {
+                clickCode.invoke(orderEntity)
+            }
         }
     }
 }

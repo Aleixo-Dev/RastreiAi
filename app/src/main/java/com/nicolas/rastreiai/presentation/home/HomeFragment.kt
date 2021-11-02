@@ -33,10 +33,9 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getOrdersList()
         setupListeners()
-
     }
 
-    private fun getOrdersList(){
+    private fun getOrdersList() {
         viewModel.orders.observe(viewLifecycleOwner) { orderList ->
             setupRecyclerView(orderList)
         }
@@ -50,12 +49,17 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView(orderList: List<OrderEntity>) = binding.apply {
         with(recyclerProducts) {
-            adapter = OrderAdapter(orderList)
+            adapter = OrderAdapter(orderList) {
+                val directions = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(it)
+                findNavController().run {
+                    navigate(directions)
+                }
+            }
             setHasFixedSize(true)
         }
     }
 
-    private fun navigateTo(directions : Int){
+    private fun navigateTo(directions: Int) {
         findNavController().run {
             navigate(directions)
         }
