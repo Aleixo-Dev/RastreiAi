@@ -81,7 +81,7 @@ class AddOrderFragment : DialogFragment() {
                             } else {
                                 addOrderInLocalDatabase(
                                     inputName.text.toString(),
-                                    stateOrder.orderList[0].code
+                                    stateOrder.orderList[0].code.toString()
                                 )
                                 backStack()
                             }
