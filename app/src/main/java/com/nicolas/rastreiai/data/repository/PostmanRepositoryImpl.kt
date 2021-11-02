@@ -11,14 +11,14 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class PostmanRepositoryImpl @Inject constructor(
-    private val remote : PostmanRemoteDataSource,
-    private val local : LocalDataSource
-) : PostmanRepository{
+    private val remote: PostmanRemoteDataSource,
+    private val local: LocalDataSource
+) : PostmanRepository {
 
     override suspend fun getOrderState(orderRequest: OrderRequest): List<OrderStateUiDomain> {
         val response = remote.getOrderState(orderRequest)
         return response.let {
-            it.toOrderStateUiDomain(it.objeto)
+            it.toOrderStateUiDomain(it.objeto[0].evento, it.objeto)
         }
     }
 
