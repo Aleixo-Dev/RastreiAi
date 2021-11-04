@@ -3,6 +3,7 @@ package com.nicolas.rastreiai.presentation.add_order
 import android.os.Bundle
 import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.nicolas.rastreiai.databinding.NewCustomDialogBinding
 import androidx.fragment.app.viewModels
 import com.nicolas.rastreiai.common.Constants
+import com.nicolas.rastreiai.common.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -75,9 +77,8 @@ class AddOrderFragment : DialogFragment() {
                     }
                     is AddOrderViewModel.OrderUiState.Success -> {
                         stateOrder.orderList.let {
-                            if (it[0].category == Constants.ERROR_NOT_FOUND) {
-                                Toast.makeText(requireContext(), it[0].category, Toast.LENGTH_SHORT)
-                                    .show()
+                            if (it.isEmpty()) {
+                                showToast("Objeto não encontrado.")
                             } else {
                                 addOrderInLocalDatabase(
                                     inputName.text.toString(),
@@ -88,8 +89,7 @@ class AddOrderFragment : DialogFragment() {
                         }
                     }
                     is AddOrderViewModel.OrderUiState.Error -> {
-                        Toast.makeText(requireContext(), stateOrder.error, Toast.LENGTH_SHORT)
-                            .show()
+                        showToast(stateOrder.error)
                     }
                 }
             }
