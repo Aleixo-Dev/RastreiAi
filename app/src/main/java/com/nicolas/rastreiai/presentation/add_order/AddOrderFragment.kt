@@ -101,8 +101,4 @@ class AddOrderFragment : DialogFragment() {
             popBackStack()
         }
     }
-
-    private fun validateCodeOrder(code: String) = binding.apply {
-
-    }
 }

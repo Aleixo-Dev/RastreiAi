@@ -14,7 +14,7 @@ import com.nicolas.rastreiai.domain.model.OrderEntity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OrderAdapter.ItemRemoveListener {
 
     private val viewModel: HomeViewModel by viewModels()
 
@@ -48,15 +48,14 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupRecyclerView(orderList: List<OrderEntity>) = binding.apply {
-        with(recyclerProducts) {
-            adapter = OrderAdapter(orderList) {
-                val directions = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(it)
-                findNavController().run {
-                    navigate(directions)
-                }
+        val adapter = OrderAdapter(orderList) {
+            val directions = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(it)
+            findNavController().run {
+                navigate(directions)
             }
-            setHasFixedSize(true)
         }
+        recyclerProducts.adapter = adapter
+        adapter.setListener(this@HomeFragment)
     }
 
     private fun navigateTo(directions: Int) {
@@ -68,5 +67,9 @@ class HomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    override fun onItemRemoveClicked(orderEntity: OrderEntity, position: Int) {
+        viewModel.deleteOrder(orderEntity)
     }
 }

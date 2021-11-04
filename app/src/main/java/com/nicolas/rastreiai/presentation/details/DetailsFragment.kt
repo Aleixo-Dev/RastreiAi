@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.nicolas.rastreiai.R
 import com.nicolas.rastreiai.common.AdapterDetails
 import com.nicolas.rastreiai.common.showToast
 import com.nicolas.rastreiai.databinding.DetailsFragmentBinding

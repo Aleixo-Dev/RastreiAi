@@ -26,7 +26,7 @@ object DatabaseModule {
             app,
             OrderDatabase::class.java,
             OrderDatabase.DATABASE_NAME
-        ).build()
+        ).allowMainThreadQueries().build()
     }
 
     @Provides
