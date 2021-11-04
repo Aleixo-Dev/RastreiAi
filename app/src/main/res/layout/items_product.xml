@@ -26,15 +26,18 @@
 
             <TextView
                 android:id="@+id/tv_product_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:ellipsize="marquee"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center_vertical"
                 android:padding="5dp"
+                android:singleLine="true"
                 android:text="Table spoon"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/img_remove"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
