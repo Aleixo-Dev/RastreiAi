@@ -36,7 +36,6 @@ class DetailsFragment : Fragment() {
         val details = arguments.orderEntity
         binding.apply {
             tvNameOrder.text = details.title
-            showToast(details.code)
         }
         getDetailsOrder(details.code)
     }
