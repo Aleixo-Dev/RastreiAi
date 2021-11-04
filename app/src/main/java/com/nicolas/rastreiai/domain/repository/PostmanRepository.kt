@@ -15,6 +15,6 @@ interface PostmanRepository {
 
     suspend fun insertOrder(note: OrderEntity)
 
-    suspend fun deleteOrder(note: OrderEntity)
+    suspend fun deleteOrder(order: OrderEntity)
 
 }

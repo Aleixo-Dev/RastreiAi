@@ -34,7 +34,7 @@ class PostmanRepositoryImpl @Inject constructor(
         local.insertOrder(note)
     }
 
-    override suspend fun deleteOrder(note: OrderEntity) {
-        TODO("Not yet implemented")
+    override suspend fun deleteOrder(order: OrderEntity) {
+        local.deleteOrder(order)
     }
 }
