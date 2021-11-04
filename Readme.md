@@ -6,7 +6,7 @@ Um applicativo onde é possivel rastrear suas encomendas.
 
 <p align="center">
 
-<img width=150 align=center![Screenshot_1636058392.png](images/Screenshot_1636058392.png)</img>
+<img width=150 align=center src="images/Screenshot_1636058392.png"></img>
 
 ![Screenshot_1636058452.png](images/Screenshot_1636058452.png)
 
