@@ -3,16 +3,13 @@ package com.nicolas.rastreiai.presentation.add_order
 import android.os.Bundle
 import android.text.InputFilter
 import android.text.InputFilter.LengthFilter
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.nicolas.rastreiai.databinding.NewCustomDialogBinding
 import androidx.fragment.app.viewModels
-import com.nicolas.rastreiai.common.Constants
 import com.nicolas.rastreiai.common.showToast
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.nicolas.rastreiai.common.AdapterDetails
-import com.nicolas.rastreiai.common.showToast
 import com.nicolas.rastreiai.databinding.DetailsFragmentBinding
 import com.nicolas.rastreiai.domain.model.OrderStateUiDomain
 import dagger.hilt.android.AndroidEntryPoint
